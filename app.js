@@ -9,6 +9,10 @@ document.querySelector('#addSport').addEventListener('click', e =>{
     console.log(topics)
     document.getElementById('topics').innerHTML = ''
     document.getElementById('sportVal').innerHTML = ''
+    if(e.keyCode <= 67 && e.keyCode >=90){
+        return null
+    }
+    // call getgif function
     getGif()
 })
 //Create a function to call and loop through array for buttons
@@ -26,10 +30,10 @@ function getGif(){
     }
 //Create a click listener to fetch through giphy api
 document.addEventListener('click', e =>{
-    if(e.target.className === 'topicBtn btn waves-light'){
+    if(e.target.className === 'topicBtn btn waves-light' || e.target.id === 'addSport'){
         let sports = e.target.value
         console.log(sports)
-        fetch('http://api.giphy.com/v1/gifs/search?q=' + sports + '&api_key=dc6zaTOxFJmzC&limit=10')
+        fetch('http://api.giphy.com/v1/gifs/search?q=' + sports + '&api_key=gh47HITPoBT2sapYik5lOhtZy9GDaZdS&limit=10')
             .then(r => r.json())
             .then( r=>{
                     console.log(r)
