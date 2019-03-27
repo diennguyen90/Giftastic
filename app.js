@@ -1,11 +1,22 @@
 // // array of topics
 let topics = ['football','basketball','hockey','baseball','boxing']
 
+// need to implement add new topic into array ** needs work
+document.querySelector('#addSport').addEventListener('click', e =>{
+    e.preventDefault()
+    let sportVal = document.getElementById('sportVal').value
+    topics.push(sportVal)
+    console.log(topics)
+    document.getElementById('topics').innerHTML = ''
+    document.getElementById('sportVal').innerHTML = ''
+    getGif()
+})
 //Create a function to call and loop through array for buttons
 function getGif(){
+    document.getElementById('sportVal').innerHTML = ''
     for(let i = 0; i <topics.length;i++){
+        
         let gifBtn = document.createElement('button')
-
             gifBtn.innerHTML = topics[i]
             gifBtn.setAttribute('value', topics[i])
             gifBtn.setAttribute('data-topic', topics[i])
@@ -13,7 +24,6 @@ function getGif(){
             gifBtn.setAttribute('class', 'topicBtn btn waves-light')
             document.getElementById('topics').append(gifBtn)
     }
-    let toggle = false
 //Create a click listener to fetch through giphy api
 document.addEventListener('click', e =>{
     if(e.target.className === 'topicBtn btn waves-light'){
@@ -53,7 +63,7 @@ document.addEventListener('click', e =>{
 }
 getGif()
 
-// First Attempt
+// FIRST ATTEMPT ** referrencing
 // document.querySelector('#addSport').addEventListener('click', e =>{
 //     e.preventDefault()
 //     let topics = document.getElementById('sportVal').value
