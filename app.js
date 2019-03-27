@@ -1,5 +1,5 @@
 // // array of topics
-let topics = ['football','basketball','hockey']
+let topics = ['football','basketball','hockey','baseball','boxing']
 
 //Create a function to call and loop through array for buttons
 function getGif(){
