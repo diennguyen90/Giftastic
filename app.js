@@ -33,7 +33,7 @@ document.addEventListener('click', e =>{
     if(e.target.className === 'topicBtn btn waves-light' || e.target.id === 'addSport'){
         let sports = e.target.value
         console.log(sports)
-        fetch('http://api.giphy.com/v1/gifs/search?q=' + sports + '&api_key=gh47HITPoBT2sapYik5lOhtZy9GDaZdS&limit=10')
+        fetch('https://api.giphy.com/v1/gifs/search?q=' + sports + '&api_key=gh47HITPoBT2sapYik5lOhtZy9GDaZdS&limit=10')
             .then(r => r.json())
             .then( r=>{
                     console.log(r)
